@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalle del Producto | Mi Tienda Demo</title>
+    <!-- Meta Pixel Code -->
+<script src="assets/meta-pixel.js"></script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1436498701387258&ev=PageView&noscript=1"/>
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <header class="store-header">
+        <h1>🛒 Mi Tienda Demo</h1>
+    </header>
+
+    <nav class="breadcrumb">
+        <a href="index.html">← Volver al inicio</a>
+    </nav>
+
+    <main class="product-detail">
+        <div class="product-image large">📦</div>
+
+        <div class="product-info">
+            <h2 class="product-name">Producto de Prueba</h2>
+
+            <p class="product-description">
+                Este es el detalle del producto de demostración. Su SKU es
+                <strong>SKU_001</strong> y pertenece a la categoría
+                <em>Electrónica</em>.
+            </p>
+
+            <div class="product-price">$ 99.99 USD</div>
+
+            <div class="button-group">
+                <button id="buyButton" class="btn btn-primary">
+                    Comprar
+                </button>
+            </div>
+
+            <div id="status" class="status-message"></div>
+        </div>
+    </main>
+
+    <footer class="store-footer">
+        <p>&copy; 2026 Mi Tienda Demo — Entorno de pruebas</p>
+    </footer>
+
+   <script>
+    // ============================================
+    // Lógica del botón "Comprar"
+    // Dispara el evento Purchase en Meta Pixel
+    // ============================================
+    document.getElementById('buyButton').addEventListener('click', function () {
+        const statusDiv     = document.getElementById('status');
+
+        // ID fijo para la prueba de deduplicación con Postman
+        const orderId       = 'ORDER_DEMO_001';
+        const purchaseValue = 99.99;
+        const currency      = 'USD';
+
+        // 🎯 Disparo del evento Purchase en Meta Pixel
+        fbq('track', 'Purchase', {
+            value: purchaseValue,
+            currency: currency,
+            content_ids: ['SKU_001'],
+            content_type: 'product',
+            num_items: 1
+        }, {
+            eventID: orderId  // <-- Mismo ID que en Postman para deduplicar
+        });
+
+        // Feedback visual
+        statusDiv.textContent =
+            `✅ Compra simulada correctamente. Pedido: ${orderId}`;
+        statusDiv.style.color = '#28a745';
+
+        // Log de verificación
+        console.log('[Meta Pixel] Purchase enviado:', {
+            eventID: orderId,
+            value: purchaseValue,
+            currency: currency
+        });
+    });
+</script>
+
+</body>
+</html>

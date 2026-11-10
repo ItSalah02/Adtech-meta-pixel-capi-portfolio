@@ -1,0 +1,23 @@
+{
+  "data": [
+    {
+      "event_name": "Purchase",
+      "event_time": 1794213905,
+      "action_source": "website",
+      "event_id": "ORDER_DEMO_001",
+      "event_source_url": "http://127.0.0.1:5500/product.html",
+      "user_data": {
+        "client_ip_address": "127.0.0.1",
+        "client_user_agent": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/157.0.0.0 Safari/537.36 Edg/157.0.0.0"
+      },
+      "custom_data": {
+        "value": 99.99,
+        "currency": "USD",
+        "content_ids": ["SKU_001"],
+        "content_type": "product",
+        "num_items": 1
+      }
+    }
+  ],
+  "test_event_code": "TEST79345"
+}

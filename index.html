@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mi Tienda Demo | Inicio</title>
+    <!-- Meta Pixel Code -->
+<script src="assets/meta-pixel.js"></script>
+
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=1436498701387258&ev=PageView&noscript=1"/>
+/></noscript>
+<!-- End Meta Pixel Code -->
+    <link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+    <header class="store-header">
+        <h1>🛒 Mi Tienda Demo</h1>
+        <p class="subtitle">Simulación de e-commerce para pruebas de Meta Pixel</p>
+    </header>
+
+    <main class="product-card">
+        <div class="product-image">📦</div>
+
+        <h2 class="product-name">Producto de Prueba</h2>
+
+        <p class="product-description">
+            Artículo de demostración utilizado para validar la implementación
+            de Meta Pixel y la Conversions API.
+        </p>
+
+        <div class="product-price">$ 99.99 USD</div>
+
+        <div class="button-group">
+            <!-- Botón "Ver Producto": navega al detalle del producto -->
+            <a href="product.html" class="btn btn-secondary">
+                Ver Producto
+            </a>
+
+            <!-- Botón "Comprar": dispara la simulación de compra -->
+            <button id="buyButton" class="btn btn-primary">
+                Comprar
+            </button>
+        </div>
+
+        <div id="status" class="status-message"></div>
+    </main>
+
+    <footer class="store-footer">
+        <p>&copy; 2026 Mi Tienda Demo — Entorno de pruebas</p>
+    </footer>
+
+    <script>
+        // ============================================
+        // Lógica del botón "Comprar"
+        // (En el Paso 2 se conectará con Meta Pixel)
+        // ============================================
+        document.getElementById('buyButton').addEventListener('click', function () {
+            const statusDiv = document.getElementById('status');
+
+            // Simulación de compra
+            const orderId    = 'ORDER_' + Date.now();
+            const purchaseValue = 99.99;
+            const currency   = 'USD';
+
+            // Feedback visual al usuario
+            statusDiv.textContent =
+                `✅ Compra simulada correctamente. Pedido: ${orderId}`;
+            statusDiv.style.color = '#28a745';
+
+            // Log en consola con los datos de la transacción
+            console.log('[Checkout] Compra simulada:', {
+                orderId,
+                value: purchaseValue,
+                currency
+            });
+        });
+    </script>
+
+</body>
+</html>
