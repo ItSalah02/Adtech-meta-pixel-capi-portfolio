@@ -58,6 +58,7 @@ Because real browsers lose events to ad blockers and server-side payloads someti
 The deduplicated dataset (4,500 unique conversions) was exported to Google Sheets and connected to **Looker Studio**.
 
 ### 🔗 [View the interactive dashboard](https://datastudio.google.com/reporting/24c72b3e-624c-4274-8d8a-7fcf78b659f9)
+![Dashboard Preview](Dashboard.png)
 
 **Main dashboard KPIs (30-day simulation):**
 
