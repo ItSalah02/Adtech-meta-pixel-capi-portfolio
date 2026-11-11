@@ -61,7 +61,7 @@ The deduplicated dataset (4,500 unique conversions) was exported to Google Sheet
 <details>
   <summary>📊 <b>Click to preview the dashboard screenshot</b></summary>
   <br>
-  <img src="Dashboard.png" alt="Dashboard Preview" width="100%">
+  <img src="dashboard.png" alt="Dashboard Preview" width="100%">
 </details>
 
 **Main dashboard KPIs (30-day simulation):**
